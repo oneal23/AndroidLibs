@@ -7,7 +7,8 @@ import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.lei.baselib.EasyApplication;
+
+import com.lei.baselib_java.EasyApplication;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
