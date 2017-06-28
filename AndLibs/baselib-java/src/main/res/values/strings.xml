@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">baseLib-Java</string>
+    <string name="data_empty">没有数据</string>
+    <string name="data_error">加载失败，请重试</string>
+    <string name="data_load_more">正在加载...</string>
+    <string name="data_no_more">没有更多数据了</string>
 </resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 侧滑退出 -->
+    <style name="SwipeBackLayout">
+        <item name="edge_size">50dip</item>
+        <item name="shadow_left">@drawable/shadow_left</item>
+        <item name="shadow_right">@drawable/shadow_right</item>
+        <item name="shadow_bottom">@drawable/shadow_bottom</item>
+    </style>
+
+    <style name="LoadDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">#445ca1</item>
+    </style>
+
+</resources>
