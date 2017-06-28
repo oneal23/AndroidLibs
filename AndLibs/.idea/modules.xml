@@ -6,6 +6,9 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/baselib-java/baselib-java.iml" filepath="$PROJECT_DIR$/baselib-java/baselib-java.iml" />
       <module fileurl="file://$PROJECT_DIR$/baselib-kotlin/baselib-kotlin.iml" filepath="$PROJECT_DIR$/baselib-kotlin/baselib-kotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/svg-generator/svg-generator.iml" filepath="$PROJECT_DIR$/svg-generator/svg-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/svg-plugin/svg-plugin.iml" filepath="$PROJECT_DIR$/svg-plugin/svg-plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/svg-support/svg-support.iml" filepath="$PROJECT_DIR$/svg-support/svg-support.iml" />
     </modules>
   </component>
 </project>

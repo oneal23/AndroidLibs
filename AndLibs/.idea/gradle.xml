@@ -11,6 +11,9 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/baselib-java" />
             <option value="$PROJECT_DIR$/baselib-kotlin" />
+            <option value="$PROJECT_DIR$/svg-generator" />
+            <option value="$PROJECT_DIR$/svg-plugin" />
+            <option value="$PROJECT_DIR$/svg-support" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

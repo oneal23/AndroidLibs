@@ -1,1 +1,1 @@
-include ':app', ':baselib-java', ':baselib-kotlin'
+include ':app', ':baselib-java', ':baselib-kotlin', ':svg-support', ':svg-generator', ':svg-plugin'
