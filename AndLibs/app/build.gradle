@@ -4,6 +4,16 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'svg'
+svg {
+    // 配置vector目录，可以配置多个(如果直接使用svg格式图片，可以不配置此项)
+    vectorDirs = ["src/main/res_vector/drawable"]
+    // 配置生成空shape文件目录
+    shapeDir = "src/main/res_shape/drawable"
+    // 配置生成java文件目录
+    javaDir = "src/main/java/com/lei/andlibs/drawables"
+    appColors = ['black': 0xff000000]
+    // 自动将vector和shape资源文件添加到SourceSet，此项默认是true，可以不设置
+}
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.0"
@@ -31,6 +41,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation 'com.github.LtLei:AndroidLibs:0.1.2'
+    implementation 'com.github.LtLei:AndroidLibs:0.1.4'
     implementation 'com.android.support:appcompat-v7:26.0.0-beta2'
 }

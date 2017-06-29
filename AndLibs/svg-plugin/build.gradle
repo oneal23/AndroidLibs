@@ -1,24 +1,25 @@
 apply plugin: 'groovy'
-apply plugin: 'maven'
-//apply plugin: 'com.github.dcendents.android-maven'
-//group='com.github.LtLei'
+//apply plugin: 'maven'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.LtLei'
 dependencies {
     compile gradleApi()
     compile localGroovy()
     compile project(':svg-generator')
 }
 
-group='svg-plugin'
-archivesBaseName=ARTIFACTID
-version='1.0.0'
+//group='com.github.LtLei'
+//archivesBaseName='svg-plugin'
+//version='2.0.0'
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: uri('../maven'))
-        }
-    }
-}
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+////            repository(url: uri('../maven'))
+//            repository(url: 'file:../lib')
+//        }
+//    }
+//}
 
 //apply from: '../bintray_java.gradle'
 //apply from: '../nexus_java.gradle'

@@ -6,16 +6,20 @@ buildscript {
     repositories {
         google()
         jcenter()
-        maven{
-            url uri('./maven')
-        }
+        maven { url 'https://jitpack.io' }
+//        maven{
+////            url uri('./maven')
+////            url 'file:../lib'
+//            url 'https://github.com/LtLei/AndroidLibs/AndLibs/maven'
+//        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.0-alpha4'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
-        classpath 'com.github.megatronking:svg-plugin:1.0.0'
+//        classpath 'svg-plugin:svg-plugin:1.0.0'
+        classpath 'com.github.LtLei.AndroidLibs:svg-plugin:0.1.4'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -26,9 +30,11 @@ allprojects {
         google()
         jcenter()
         mavenCentral()
-        maven{
-            url uri('./maven')
-        }
+//        maven{
+////            url uri('./maven')
+////            url 'file:../lib'
+//            url 'https://github.com/LtLei/AndroidLibs/AndLibs/maven'
+//        }
         maven { url 'https://jitpack.io' }
     }
 }
