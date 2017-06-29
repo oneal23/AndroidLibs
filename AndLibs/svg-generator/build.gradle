@@ -1,7 +1,7 @@
 apply plugin: 'java'
 //apply plugin: 'maven'
-//apply plugin: 'com.github.dcendents.android-maven'
-//group='com.github.LtLei'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.LtLei'
 dependencies {
     compile 'dom4j:dom4j:1.6.1'
     compile 'jaxen:jaxen:1.1.6'
