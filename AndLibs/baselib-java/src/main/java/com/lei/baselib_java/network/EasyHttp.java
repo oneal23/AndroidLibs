@@ -141,6 +141,10 @@ public class EasyHttp {
         return method(Method.POST_JSON, path, map);
     }
 
+    public Observable<String> postJson(String path, String content) {
+        return json(path,content);
+    }
+
     public Observable<String> uploadOneFile(String url, Map<String, String> descriptions, File file, UIProgressListener progressListener) {
         List<File> files = new ArrayList<>();
         files.add(file);
@@ -172,6 +176,48 @@ public class EasyHttp {
                         return result;
                     }
                 }).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    private Observable<String> json(final String path, String content) {
+        checkNotNull(mEasyService);
+        final String key = content;
+        if (mCacheTime != 0) {
+            final String cacheData = mCache.getAsString(key);
+            if (cacheData != null && !cacheData.isEmpty()) {
+                Logger.i("Net: " + "从缓存中读取数据" + cacheData);
+                mCacheTime = 0;
+                return Observable.just(cacheData).subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread());
+            }
+        }
+
+        Observable<ResponseBody> observable = null;
+
+        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), content);
+        observable = mEasyService.postJson(path, body);
+
+        return observable.map(new Function<ResponseBody, String>() {
+            @Override
+            public String apply(ResponseBody responseBody) throws Exception {
+                String result = "";
+                try {
+                    result = responseBody.string();
+                    //缓存响应
+                    if (mCacheTime != 0) {
+                        mCache.put(key, result, mCacheTime);
+                        mCacheTime = 0;
+                    }
+                    responseBody.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                Logger.json(result);
+                Logger.i("NET:" + result);
+                return result;
+            }
+        }).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
@@ -222,7 +268,7 @@ public class EasyHttp {
                 }
 
                 Logger.json(result);
-                Logger.i("NET:"+result);
+                Logger.i("NET:" + result);
                 return result;
             }
         }).subscribeOn(Schedulers.io())
