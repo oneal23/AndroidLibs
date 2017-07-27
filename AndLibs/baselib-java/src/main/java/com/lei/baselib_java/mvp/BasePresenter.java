@@ -62,5 +62,6 @@ public class BasePresenter<V extends IBaseView, S extends IBaseSource> implement
         if (compositeDisposable != null && !compositeDisposable.isDisposed()) {
             compositeDisposable.dispose();
         }
+
     }
 }

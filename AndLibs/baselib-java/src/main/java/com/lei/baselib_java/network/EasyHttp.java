@@ -49,7 +49,7 @@ public class EasyHttp {
     private Gson mGson;
     private static EasyHttp instance = null;
     private ACache mCache;
-
+    private boolean clearCache = false;
     private EasyHttp() {
         mGson = new GsonBuilder()
                 .setDateFormat("yyyy-MM-dd hh:mm:ss")
@@ -112,7 +112,9 @@ public class EasyHttp {
 
         return this;
     }
-
+    public void clearCache(){
+        clearCache = true;
+    }
     public EasyHttp addHeaders(Map<String, String> headers) {
         if (headers == null || headers.size() == 0) return this;
         this.mHeaders = headers;
@@ -182,6 +184,10 @@ public class EasyHttp {
     private Observable<String> json(final String path, String content) {
         checkNotNull(mEasyService);
         final String key = content;
+        if (clearCache){
+            clearCache = false;
+            mCache.remove(key);
+        }
         if (mCacheTime != 0) {
             final String cacheData = mCache.getAsString(key);
             if (cacheData != null && !cacheData.isEmpty()) {
@@ -222,8 +228,13 @@ public class EasyHttp {
     }
 
     private Observable<String> method(Method method, final String path, Map<String, Object> map) {
+
         checkNotNull(mEasyService);
         final String key = path + transMapToString(map);
+        if (clearCache){
+            clearCache = false;
+            mCache.remove(key);
+        }
         if (mCacheTime != 0) {
             final String cacheData = mCache.getAsString(key);
             if (cacheData != null && !cacheData.isEmpty()) {
