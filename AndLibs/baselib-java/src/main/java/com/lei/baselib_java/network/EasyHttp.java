@@ -116,6 +116,9 @@ public class EasyHttp {
         clearCache = true;
         return this;
     }
+    public void clearAllCaches(){
+        mCache.clear();
+    }
     public EasyHttp addHeaders(Map<String, String> headers) {
         if (headers == null || headers.size() == 0) return this;
         this.mHeaders = headers;

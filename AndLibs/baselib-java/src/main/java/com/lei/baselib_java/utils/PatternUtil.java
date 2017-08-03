@@ -14,7 +14,7 @@ public class PatternUtil {
     public static final String EMAIL = "\\w[-\\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\\.)+[A-Za-z]{2,14}";
     public static final String NICKNAME = "[A-Za-z0-9_\\-\u4e00-\u9fa5]+";
     public static final String PASSWORD = "\\w{6,20}$";
-    public static final String IDENTIFY = "^\\d{15}|\\d{18}$";
+    public static final String IDENTIFY = "^\\d{14}[0-9Xx]|\\d{17}[0-9Xx]$";
 
     public static boolean pattern(String form, String content) {
         Pattern p = Pattern.compile(form);
