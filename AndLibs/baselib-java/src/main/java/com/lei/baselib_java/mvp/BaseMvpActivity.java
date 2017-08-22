@@ -76,6 +76,7 @@ public class BaseMvpActivity<P extends IBasePresenter> extends BaseActivity impl
 
     @Override
     public void showError(String error) {
+		if(error!=null&&!error.isEmpty())
         UiHelper.showToast(error);
     }
 }

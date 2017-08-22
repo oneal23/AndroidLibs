@@ -73,6 +73,7 @@ public abstract class BaseMvpFragment<P extends IBasePresenter> extends BaseFrag
 
     @Override
     public void showError(String error) {
+		if(error!=null&&!error.isEmpty())
         UiHelper.showToast(error);
     }
 }
