@@ -47,7 +47,9 @@ public class LoadingImgView extends AppCompatImageView {
         textPaint.setTextSize(25);
         textbound = new Rect();
     }
+
     boolean begin = false;
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -66,11 +68,13 @@ public class LoadingImgView extends AppCompatImageView {
         //画文字  
         canvas.drawText(perStr, getWidth() / 2 - textbound.width() / 2, getHeight() / 2 + textbound.height() / 2, textPaint);
     }
-    public void begin(){
+
+    public void begin() {
         this.begin = true;
 
         postInvalidate();
     }
+
     public void setPer(float per) {
         this.per = per;
         //在主线程刷新  
@@ -82,10 +86,10 @@ public class LoadingImgView extends AppCompatImageView {
         postInvalidate();
     }
 
-    public void reset(){
+    public void reset() {
         finish();
         isfinished = false;
         begin = false;
-        per = 0.0;
+        per = 0.0f;
     }
 }  
