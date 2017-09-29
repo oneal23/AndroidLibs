@@ -82,4 +82,10 @@ public class LoadingImgView extends AppCompatImageView {
         postInvalidate();
     }
 
+    public void reset(){
+        finish();
+        isfinished = false;
+        begin = false;
+        per = 0.0;
+    }
 }  
